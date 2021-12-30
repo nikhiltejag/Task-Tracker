@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1> Task Tracker </h1>
-        <Button @click="onClick()" color="green" text="Add Task" />
+        <Button @btn-click="onClick()" :color="showAddTask?'red':'green'" :text="showAddTask?'Close':'Add Task'" />
     </header>
 </template>
 
@@ -12,6 +12,7 @@ export default {
     name: 'Header',
     props: {
         title: String,
+        showAddTask: Boolean,
     },
     components: {
         Button,
@@ -19,6 +20,7 @@ export default {
     methods: {
         onClick() {
             console.log('CLicked')
+            this.$emit('toggle-add-task')
         }
     }
 

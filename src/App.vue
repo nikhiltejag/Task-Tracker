@@ -1,6 +1,7 @@
 <template>
 <div class="container">
-  <Header />
+  <Header :showAddTask="showAddTask" @toggle-add-task="toggleAddTask" />
+  <AddTask v-show="showAddTask" @add-new-task="addTaskToData" />
   <Tasks @toggle-remainder="toggleRemainder" @delete-task="deleteTask" :tasks="tasks" />
 </div>
   
@@ -11,16 +12,19 @@
 <script>
 import Header from './components/Header'
 import Tasks from './components/Tasks.vue'
+import AddTask from './components/AddTask.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Tasks,
+    AddTask,
   },
   data() {
     return {
       tasks: [],
+      showAddTask: false,
     }
   },
   methods: {
@@ -32,6 +36,12 @@ export default {
     toggleRemainder(id){
       this.tasks = this.tasks.map( each => each.id === id ? {...each, remainder: !each.remainder}:{...each})
       // console.log(id)
+    },
+    addTaskToData(task){
+      this.tasks = [...this.tasks, task]
+    },
+    toggleAddTask(){
+      this.showAddTask = !this.showAddTask
     }
   },
   created(){
@@ -64,7 +74,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }
