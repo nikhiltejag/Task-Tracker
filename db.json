@@ -1,22 +1,22 @@
 {
-"tasks" : [
+  "tasks": [
     {
-      "id":"1",
+      "id": "1",
       "text": "Doctors Appointment",
       "day": "March 1st at 2:30pm",
-      "remainder": "true"
+      "remainder": true
     },
     {
-      "id":"2",
-      "text": "Doctors Farewell",
-      "day": "March 1st at 4:30pm",
-      "remainder": "false"
-    },
-    {
-      "id":"3",
-      "text": "Movie Time",
+      "id": "3",
+      "text": "Movie Time with Friends",
       "day": "March 2nd at 2:30pm",
-      "remainder": "true"
+      "remainder": false
+    },
+    {
+      "id": 1005,
+      "text": "Complete Given Video",
+      "day": "Thursday, 30th December at 2pm",
+      "remainder": true
     }
   ]
 }
