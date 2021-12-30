@@ -1,7 +1,7 @@
 <template>
     <header>
         <h1> Task Tracker </h1>
-        <Button @btn-click="onClick()" :color="showAddTask?'red':'green'" :text="showAddTask?'Close':'Add Task'" />
+        <Button v-show="homePage" @btn-click="onClick()" :color="showAddTask?'red':'green'" :text="showAddTask?'Close':'Add Task'" />
     </header>
 </template>
 
@@ -22,7 +22,16 @@ export default {
             console.log('CLicked')
             this.$emit('toggle-add-task')
         }
+    },
+    computed: {
+        homePage() {
+            if (this.$route.path === '/'){
+                return true
+            }
+            return false
+        }
     }
+
 
 }
 
