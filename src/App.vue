@@ -41,7 +41,10 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+  max-width: 1100px;
+  margin: auto;
 }
+
 
 .container{
   border: 3px solid #7fb7f0;

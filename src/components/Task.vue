@@ -1,5 +1,5 @@
 <template>
-    <div @dblclick="$emit('toggle-remainder', task.id)" :class="[task.remainder?'remainder': '', 'task']" class="task">
+    <div @dblclick="$emit('toggle-remainder', task.id)" :class="[task.remainder?'remainder': '', 'task']">
         <h3>{{task.text}}
             <span @click="$emit('delete-task', task.id)" class="cross">X</span>
         </h3>

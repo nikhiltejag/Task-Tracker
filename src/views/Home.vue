@@ -35,10 +35,11 @@ export default {
       }
     },
     async toggleRemainder(id){
+      
       const taskToToggle = await this.fetchTask(id)
-
-      const updatedTask = {...taskToToggle, remainder: !taskToToggle}
-
+  // console.log('before',taskToToggle)
+      const updatedTask = {...taskToToggle, remainder: !taskToToggle.remainder}
+      // console.log('updated',updatedTask)
       const res = await fetch(`http://localhost:5001/tasks/${id}`
       , {
         method: 'PUT',
@@ -49,9 +50,8 @@ export default {
       })
 
       const data = await res.json()
-
+      // console.log('updated to db',data)
       this.tasks = this.tasks.map( each => each.id === id ? {...each, remainder: data.remainder}:{...each})
-      // console.log(id)
     },
     async addTaskToData(task){
       const res = await fetch('http://localhost:5001/tasks', {

@@ -19,7 +19,6 @@ export default {
     },
     methods: {
         onClick() {
-            console.log('CLicked')
             this.$emit('toggle-add-task')
         }
     },

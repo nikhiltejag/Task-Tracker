@@ -7,16 +7,16 @@
       "remainder": true
     },
     {
-      "id": "3",
-      "text": "Movie Time with Friends",
-      "day": "March 2nd at 2:30pm",
-      "remainder": false
+      "text": "Doctor's Farewell",
+      "day": "March 2nd at 6pm",
+      "remainder": false,
+      "id": "1rzPmMZ"
     },
     {
-      "text": "Complete Given Video",
-      "day": "Thursday, 30th December at 2pm",
+      "text": "Project Submission`",
+      "day": "April 1st at 10AM",
       "remainder": true,
-      "id": "cgE1pRt"
+      "id": "yOtg-PU"
     }
   ]
 }
